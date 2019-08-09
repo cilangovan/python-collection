@@ -13,6 +13,14 @@ s3_re=my_session.resource(service_name="s3",region_name="us-east-1")
    # print(each_bucke_info)
 
 
-for bucket in s3_re.buckets.all():
+# Create an S3 client
+s3 = boto3.client('s3')
 
-        print (bucket)
+# Call S3 to list current buckets
+response = s3.list_buckets()
+
+# Get a list of all bucket names from the response
+buckets = [bucket['Name'] for bucket in response['Buckets']]
+
+# Print out the bucket list
+print("Bucket List: %s" % buckets)
