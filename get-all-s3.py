@@ -13,6 +13,6 @@ s3_re=my_session.resource(service_name="s3",region_name="us-east-1")
    # print(each_bucke_info)
 
 
-for bucket in s3.buckets.all():
-    if bucket.name.startswith("myapp-"):
-        print bucket.name
+for bucket in s3_re.buckets.all():
+
+        print (bucket)
