@@ -1,6 +1,6 @@
 import boto3
 
-my_session = boto3.session.Session(profile_name="root")
+my_session = boto3.session.Session(profile_name="chrz_root")
 
 #s3_re=my_session.resource(service_name="s3",region_name="us-east-1")
 
